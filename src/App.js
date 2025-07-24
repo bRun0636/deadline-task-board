@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import KanbanBoard from './components/KanbanBoard/KanbanBoard';
+import Navbar from './components/Navbar/Navbar';
+import './styles.css';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend'; 
 
 function App() {
+  const [theme, setTheme] = useState('dark');
+  const [isNavbarClosed, setIsNavbarClosed] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsNavbarClosed(!isNavbarClosed);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <DndProvider backend={HTML5Backend}>
+    <div className={`app ${theme}`}>
+      <Navbar 
+        toggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
+        theme={theme}
+        isClosed={isNavbarClosed}
+        toggleNavbar={toggleNavbar}
+      />
+      
+      <div className={`main-content ${isNavbarClosed ? 'navbar-closed' : ''}`}>
+        <KanbanBoard />
+      </div>
     </div>
+    </DndProvider>
   );
 }
 
