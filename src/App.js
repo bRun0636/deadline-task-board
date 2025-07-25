@@ -7,7 +7,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 
 function App() {
   const [theme, setTheme] = useState('dark');
-  const [isNavbarClosed, setIsNavbarClosed] = useState(false);
+  const [isNavbarClosed, setIsNavbarClosed] = useState(true);
 
   const toggleNavbar = () => {
     setIsNavbarClosed(!isNavbarClosed);

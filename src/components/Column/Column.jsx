@@ -1,3 +1,4 @@
+import './Column.css';
 import { useDrop } from 'react-dnd';
 import TaskCard from '../TaskCard/TaskCard';
 

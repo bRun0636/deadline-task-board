@@ -1,3 +1,5 @@
+/* src/types/dto/UserDTO.js */
+
 export const UserDTO = {
   id: '',
   username: '',

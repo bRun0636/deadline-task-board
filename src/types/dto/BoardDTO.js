@@ -1,3 +1,4 @@
+/* src/types/dto/BoardDTO.js */
 export const BoardType = {
   PUBLIC: 'public',
   PRIVATE: 'private',

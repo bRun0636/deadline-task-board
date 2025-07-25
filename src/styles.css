@@ -1,3 +1,4 @@
+/* === Базовые сбросы и системные стили === */
 body {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@ body {
   box-sizing: border-box;
 }
 
+/* === Основной контейнер приложения === */
 .app {
   display: flex;
   min-height: 100vh;
@@ -24,6 +26,7 @@ body {
   color: #000;
 }
 
+/* === Контент рядом с навбаром === */
 .main-content {
   flex-grow: 1;
   padding: 20px;
@@ -33,247 +36,9 @@ body {
   margin-left: 240px;
 }
 
-.navbar {
-  width: 240px;
-  min-height: 100vh;
-  position: sticky;
-  top: 0;
-  flex-shrink: 0;
-  z-index: 100;
-  padding: 20px;
-  transition: transform 0.3s ease;
-}
-
-.navbar.dark {
-  background-color: #222;
-  color: white;
-}
-
-.navbar.light {
-  background-color: #f0f0f0;
-  color: #111;
-}
-
-.navbar.closed {
-  transform: translateX(-100%);
-}
-
-.navbar-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.navbar h3, .navbar h4 {
-  margin-top: 0;
-}
-
-.navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
-}
-
-.navbar li {
-  padding: 8px 0;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.navbar li:hover {
-  color: #3b82f6;
-}
-
-.toggle-btn {
-  position: absolute;
-  right: -40px;
-  top: 20px;
-  background: #444;
-  color: white;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-  border-radius: 0 4px 4px 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
-}
-
-.navbar.light .toggle-btn {
-  background: #ddd;
-  color: #111;
-}
-
-.theme-btn {
-  margin-top: auto;
-  background-color: #666;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.navbar.light .theme-btn {
-  background-color: #ccc;
-  color: #111;
-}
-
-/* Kanban-доска */
-.kanban-board {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 12px;
-  padding: 10px;
-  overflow-x: auto;
-  min-height: calc(100vh - 120px);
-}
-
-.column {
-  border-radius: 8px;
-  padding: 12px;
-  flex: 1;
-  min-width: 250px;
-  max-width: 100%;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease;
-}
-
-/* Темы колонок */
-.app.dark .column {
-  background-color: #1f1f1f;
-}
-
-.app.light .column {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Заголовок колонки */
-.column-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid;
-}
-
-.app.dark .column-title {
-  border-color: #444;
-}
-
-.app.light .column-title {
-  border-color: #ddd;
-}
-
-/* Карточки задач */
-.task-card {
-  border-radius: 6px;
-  padding: 12px;
-  margin-bottom: 12px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Темы карточек */
-.app.dark .task-card {
-  background-color: #111;
-  border: 1px solid #444;
-}
-
-.app.light .task-card {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-}
-
-/* Заголовок задачи */
-.task-title {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-/* Дата задачи */
-.task-date {
-  font-size: 12px;
-  opacity: 0.8;
-}
-
-.app.dark .task-date {
-  color: #aaa;
-}
-
-.app.light .task-date {
-  color: #555;
-}
-
-/* Теги */
-.tag {
-  display: inline-block;
-  padding: 2px 6px;
-  font-size: 12px;
-  border-radius: 4px;
-  margin-top: 8px;
-  margin-right: 4px;
-  font-weight: bold;
-}
-
-.tag.feature {
-  background-color: #3b82f6;
-  color: white;
-}
-
-.tag.bug {
-  background-color: #ef4444;
-  color: white;
-}
-
-.tag.enhancement {
-  background-color: #facc15;
-  color: black;
-}
-
-/* Адаптивность */
+/* === Адаптивность для навбара и контента === */
 @media (max-width: 768px) {
-  .navbar {
-    width: 200px;
-  }
-  
   .main-content.with-navbar {
     margin-left: 200px;
   }
-  
-  .column {
-    min-width: 200px;
-  }
-}
-
-/* Стили для перетаскивания */
-.task-card {
-  cursor: grab;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.task-card.dragging {
-  opacity: 0.5;
-  cursor: grabbing;
-}
-
-.task-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.column {
-  min-height: 200px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-
-/* Подсветка колонки при наведении */
-.column:hover {
-  background-color: rgba(255, 255, 255, 0.1);
 }

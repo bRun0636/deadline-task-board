@@ -1,3 +1,5 @@
+/* src/types/dto/TaskDTO.js */
+
 export const TaskStatus = {
   TODO: "К работе",
   IN_PROGRESS: "В процессе",

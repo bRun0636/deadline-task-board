@@ -1,0 +1,82 @@
+/* src/components/TaskCard/TaskCard .css */
+
+.task-card {
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app.dark .task-card {
+  background-color: #111;
+  border: 1px solid #444;
+}
+
+.app.light .task-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+.task-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.task-date {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.app.dark .task-date {
+  color: #aaa;
+}
+
+.app.light .task-date {
+  color: #555;
+}
+
+.task-tags {
+  margin-top: 6px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+.tag.feature {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.tag.bug {
+  background-color: #ef4444;
+  color: white;
+}
+
+.tag.enhancement {
+  background-color: #facc15;
+  color: black;
+}
+
+.task-assignee {
+  font-size: 13px;
+  margin-top: 6px;
+  color: #888;
+}

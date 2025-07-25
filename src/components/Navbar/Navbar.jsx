@@ -1,5 +1,7 @@
+// src/components/Navbar/Navbar.jsx
+
 import React from "react";
-import "./styles.css";
+import "./Navbar.css";
 
 const Navbar = ({ toggleTheme, theme, isClosed, toggleNavbar }) => {
   return (
@@ -7,7 +9,7 @@ const Navbar = ({ toggleTheme, theme, isClosed, toggleNavbar }) => {
       <button className="toggle-btn" onClick={toggleNavbar}>
         {isClosed ? "☰" : "✕"}
       </button>
-      
+
       {!isClosed && (
         <div className="navbar-content">
           <h3>Навигация</h3>
@@ -17,6 +19,7 @@ const Navbar = ({ toggleTheme, theme, isClosed, toggleNavbar }) => {
             <li>Доски</li>
             <li>Статистика</li>
           </ul>
+
           <button className="theme-btn" onClick={toggleTheme}>
             Сменить тему
           </button>

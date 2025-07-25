@@ -1,0 +1,10 @@
+/* src/components/KanbanBoard/KanbanBoard.css */
+
+.kanban-board {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  padding: 10px;
+  overflow-x: auto;
+  min-height: calc(100vh - 120px);
+}

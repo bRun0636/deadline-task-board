@@ -1,4 +1,7 @@
+// src/components/TaskCard/TaskCard.jsx
+
 import { useDrag } from 'react-dnd';
+import './TaskCard.css';
 
 const TaskCard = ({ task, onMoveTask, columnId }) => {
   const [{ isDragging }, drag] = useDrag({
@@ -16,11 +19,17 @@ const TaskCard = ({ task, onMoveTask, columnId }) => {
     >
       <div className="task-title">{task.title}</div>
       <div className="task-date">{task.date}</div>
-      <div className="task-tags">
-        {task.tags.map(tag => (
-          <span key={tag} className={`tag ${tag}`}>{tag}</span>
-        ))}
-      </div>
+
+      {task.tags.length > 0 && (
+        <div className="task-tags">
+          {task.tags.map(tag => (
+            <span key={tag} className={`tag ${tag}`}>
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
       {task.assignedTo && (
         <div className="task-assignee">@{task.assignedTo}</div>
       )}

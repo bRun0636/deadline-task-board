@@ -1,3 +1,4 @@
+import './KanbanBoard.css'; // ← Подключаем стили
 import { useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -16,11 +17,9 @@ const KanbanBoard = () => {
 
   const handleMoveTask = (taskId, fromColumnId, toColumnId) => {
     setColumns(prev => {
-      // Находим задачу
       const task = prev[fromColumnId].find(t => t.id === taskId);
       if (!task) return prev;
 
-      // Обновляем статус задачи
       const updatedTask = { ...task, status: toColumnId };
 
       return {

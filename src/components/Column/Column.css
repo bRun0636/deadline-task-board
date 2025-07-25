@@ -1,0 +1,42 @@
+/* src/components/Сolumn/Сolumn.css */
+
+.column {
+  border-radius: 8px;
+  padding: 12px;
+  flex: 1;
+  min-width: 250px;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s;
+}
+
+.column:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app.dark .column {
+  background-color: #1f1f1f;
+}
+
+.app.light .column {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.column-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid;
+}
+
+.app.dark .column-title {
+  border-color: #444;
+}
+
+.app.light .column-title {
+  border-color: #ddd;
+}
