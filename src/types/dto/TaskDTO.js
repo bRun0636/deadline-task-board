@@ -14,6 +14,7 @@ export const TaskStatus = {
   DEPLOYED: "Deployed"
 };
 
+
 export const TaskType = {
   PUBLIC: "public",
   PRIVATE: "private",
@@ -24,14 +25,16 @@ export const TaskDTO = {
   title: "",
   description: "",
   status: TaskStatus.TODO,
-  date: "",
+  createdAt: new Date().toISOString(),
+  deadline: new Date().toISOString(),
+  budget: null,
+  priority: 3,
   tags: [],
   rating: null,
   assignedTo: null,
   boardId: "",
   type: TaskType.PUBLIC,
   parentId: null,
-  createdAt: new Date().toISOString(),
 };
 
 export function createTask(overrides = {}) {
